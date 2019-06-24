@@ -16,7 +16,11 @@ def input_to_index(user_input)
     user_input.to_i - 1
 end
 
+<<<<<<< HEAD
 def move(board, index, current_player)
+=======
+def move(board, index, current_player = "X")
+>>>>>>> d067790cfb8a5fed0920e0cb117130a2add95663
     board[index] = current_player
 end
 
@@ -52,7 +56,11 @@ def turn(board)
     input = gets.strip
     index = input_to_index(input)
   if valid_move?(board, index)
+<<<<<<< HEAD
       move(board, index, current_player(board))
+=======
+      move(board, index)
+>>>>>>> d067790cfb8a5fed0920e0cb117130a2add95663
       display_board(board)
   else
       turn(board)
@@ -98,6 +106,7 @@ def winner(board)
 end
 
 def play(board)
+<<<<<<< HEAD
   while !over?(board)
     turn(board)
   end
@@ -105,5 +114,15 @@ def play(board)
     puts "Congratulations #{winner(board)[0]}!"
   elsif draw?(board)
     puts "Cat's Game!"
+=======
+
+  turn(board)
+  turn_count(board)
+  current_player(board)
+  until over?(board) == true
+    input = gets
+  turn(board)
+    break
+>>>>>>> d067790cfb8a5fed0920e0cb117130a2add95663
   end
 end
